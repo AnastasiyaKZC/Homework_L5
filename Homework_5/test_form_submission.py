@@ -1,5 +1,6 @@
 from selene import browser, have, be
 
+
 def test_fill_form():
     # Заполняем поля формы
     browser.open("https://demoqa.com/automation-practice-form")
