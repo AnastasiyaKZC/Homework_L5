@@ -17,7 +17,7 @@ def test_complete_todo(open_app):
     # browser.all('#todo-list>li').second.should(have.exact_text('b'))
     # browser.all('#todo-list>li')[2].should(have.exact_text('c'))
 
-    browser.all('#todo-list>li')[2].should(have.exact_texts('a', 'b', 'c')) - #эта проверка заменяет предыдущие 4 - есть все три эти элемента и именно в таком порядке
+    browser.all('#todo-list>li')[2].should(have.exact_texts('a', 'b', 'c')) #эта проверка заменяет предыдущие 4 - есть все три эти элемента и именно в таком порядке
 
 
 
