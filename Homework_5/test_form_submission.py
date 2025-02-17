@@ -1,4 +1,4 @@
-from selene import browser, have, be
+from selene import browser, have, be, command
 
 
 def test_fill_form():
@@ -30,11 +30,13 @@ def test_fill_form():
     browser.element("#currentAddress").type("Ростов-на-Дону, ул.Города Волос")
 
     # Выбираем штат
+    browser.element("#state").perform(command.js.scroll_into_view).click() # скрол к элементу
+    browser.element("#state").should(be.clickable).click() # задержка до появления списка
     browser.element("#state").click()
     browser.all("div.css-11unzgr").element_by(have.text("Haryana")).click()
 
     # Дожидаемся загрузки списка городов
-    browser.element("#city").should(be.clickable).click()
+    browser.element("#city").should(be.clickable).click() # задержка до появления списка
     browser.all("div.css-11unzgr").element_by(have.text("Karnal")).click()
 
     # Отправляем форму
