@@ -14,14 +14,17 @@ def test_fill_form():
     # Вводим номер телефона
     browser.element("#userNumber").type("1234567890")
 
-    # Убираем дату рождения
+    # Выбираем дату рождения
     browser.element("#dateOfBirthInput").click()
     browser.element(".react-datepicker__year-select").type("1984")
     browser.element(".react-datepicker__month-select").type("May")
     browser.element(".react-datepicker__day--009").click()
 
     # Вводим предметы
-    #browser.element("#subjectsInput").type("Selene").press_enter()
+    browser.element("#subjectsInput").type("Math").press_enter() #тут повозилась - не знала, что это выпадашка, пыталась ввести свой текст
+
+    # Вводим хобби
+    browser.element('[for="hobbies-checkbox-2"]').click()
 
     # Вводим изображение
     browser.element("#uploadPicture").send_keys("/Users/kuznetsova/Desktop/download.jpg")
