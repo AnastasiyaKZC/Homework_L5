@@ -2,31 +2,31 @@ from selene import browser, have, be, command
 
 
 def test_fill_form():
-    # Заполняем поля формы
+    # Заполняю личные данные
     browser.open("https://demoqa.com/automation-practice-form")
     browser.element("#firstName").type("Анастасия")
     browser.element("#lastName").type("Кузнецова")
     browser.element("#userEmail").type("kuznetsova@mail.com")
 
-    # Выбираем пол
+    # Выбираю пол
     browser.element('[for="gender-radio-2"]').click()
 
-    # Вводим номер телефона
+    # Ввожу номер телефона
     browser.element("#userNumber").type("1234567890")
 
-    # Выбираем дату рождения
+    # Выбираю дату рождения
     browser.element("#dateOfBirthInput").click()
     browser.element(".react-datepicker__year-select").type("1984")
     browser.element(".react-datepicker__month-select").type("May")
     browser.element(".react-datepicker__day--009").click()
 
-    # Вводим предметы
+    # Ввожу предметы
     browser.element("#subjectsInput").type("Math").press_enter() #тут повозилась - не знала, что это выпадашка, пыталась ввести свой текст
 
-    # Вводим хобби
+    # Выбираю хобби
     browser.element('[for="hobbies-checkbox-2"]').click()
 
-    # Вводим изображение
+    # Загружаю изображение
     browser.element("#uploadPicture").send_keys("/Users/kuznetsova/Desktop/download.jpg")
 
     # Вводим текущий адрес
